@@ -15,6 +15,9 @@ namespace HelloWorld
             Calculator calculator = new Calculator();
             var result = calculator.Add(1, 2);
             System.Console.WriteLine(result);
+
+            var num = new int[3] {1 , 2, 3};
+            System.Console.WriteLine(num);
         }
     }
 }
