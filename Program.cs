@@ -7,17 +7,32 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-            var ken = new Person();
-            ken.FirstName = "Ken";
-            ken.LastName = "Colon";
-            ken.Introduce();
+// literal
+         var firstName = "Ken";
+         var lastName = "Colon";
 
-            Calculator calculator = new Calculator();
-            var result = calculator.Add(1, 2);
-            System.Console.WriteLine(result);
+// combination
+         var fullName = firstName + " " + lastName;
+         System.Console.WriteLine(fullName);
 
-            var num = new int[3] {1 , 2, 3};
-            System.Console.WriteLine(num);
+//Format
+         var myFullName = string.Format("My name is {0} {1}", firstName, lastName);
+         System.Console.WriteLine(myFullName);
+
+//Join
+         var names = new string[3] {"John", "Jack", "Mary"};
+         var formattedNames = string.Join(",", names);
+         System.Console.WriteLine(formattedNames);
+
+//Verbatim 
+        var text = "Hi John\nLook into the following\nc:\\folder1\\folder2\nc:\\folder3\\folder4";
+        System.Console.WriteLine(text);
+
+        var text1 = @"Hi John
+        Look into the following
+        c:\folder1\folder2
+        c:\folder3\folder4";
+        System.Console.WriteLine(text1);
         }
     }
 }
