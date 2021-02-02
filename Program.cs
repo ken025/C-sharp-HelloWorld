@@ -2,56 +2,24 @@
 
 namespace HelloWorld
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-         int i = 1;
-         float f = i;
+ public class Person
+ {
+     public string FirstName;
+     public string LastName;
 
-        Console.WriteLine(i);
-        Console.WriteLine(f);
+     public void Introduce(){
+         System.Console.WriteLine("My name is " + FirstName + " " + LastName);
+     }
+ }
 
-        int a = 2;
-        byte b = (byte) a;
-
-        Console.WriteLine(b);
-
-        var number = "123";
-        int n = Convert.ToInt32(number);
-
-        System.Console.WriteLine(n);
-
-        try
-        {
-            var num = "1234";
-            byte s  = Convert.ToByte(num);
-            System.Console.WriteLine(s);
-        
-        }
-        catch (System.Exception)
-        {
-            System.Console.WriteLine("The number cannot be converted into a byte");
-        }
-        
-        
-        int k = 1;
-        int m = k++;
-
-        System.Console.WriteLine(k);
-        System.Console.WriteLine(m);
-
-        int k2 = 1;
-        int m2 = ++k2;
-
-        System.Console.WriteLine(k2);
-        System.Console.WriteLine(m2);
-
-        var numb = 1;
-        var numbe = 2;
-        var nmbr = 3; 
-
-        System.Console.WriteLine(!(nmbr > numbe || nmbr == numb));
-        }
-    }
+ class Program
+ {
+     static void  Main(string[] args)
+     {
+         var ken = new Person();
+         ken.FirstName = "Ken";
+         ken.LastName = "Colon";
+         ken.Introduce();
+     }
+ }
 }
