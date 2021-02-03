@@ -8,22 +8,40 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-          for( var i = 1; i <= 10; i++){
-              if (i%2 == 0){
-                  System.Console.WriteLine(i);
-              }
-          }
+            var numbers = new[] {1, 2, 3, 4, 5};
 
-          var name = "Kenneth";
+            // length 
+            System.Console.WriteLine("Lenght of array: ", + numbers.Length);
 
-          for (var i = 0; i < name.Length; i++){
-              System.Console.WriteLine(name[i]);
-          }
+            // find position
+            var indx = Array.IndexOf(numbers, 2);
+            System.Console.WriteLine(indx);
 
-          foreach(var character in name){
-              System.Console.WriteLine(character);
-          }
+            // //clear    (array, starting index, lenght to be cleared)
+            Array.Clear(numbers, 0, 2);
 
-         }
+            System.Console.WriteLine("Effect of C;ear()");
+            foreach(var n in numbers)
+            System.Console.WriteLine(n);
+
+            //copy 
+            int[] another = new int[3];   
+            // (array, destination, number of elements to be copied)
+            Array.Copy(numbers, another, 3);
+
+System.Console.WriteLine("Effect of Copy()");
+            foreach(var n in another)
+            System.Console.WriteLine(n);
+
+            //sort 
+            Array.Sort(numbers);
+            foreach(var n in numbers)
+            System.Console.WriteLine(n);
+
+            //reverse
+            Array.Reverse(numbers);
+            foreach(var n in numbers)
+            System.Console.WriteLine(n);
+        }
     }
 }
