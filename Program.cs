@@ -1,5 +1,6 @@
 ﻿using System;
 using HelloWorld.Math;
+using Conditionals;
 
 namespace HelloWorld
 {
@@ -7,32 +8,51 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-// literal
-         var firstName = "Ken";
-         var lastName = "Colon";
+            int hour = 10;
 
-// combination
-         var fullName = firstName + " " + lastName;
-         System.Console.WriteLine(fullName);
+            if (hour > 8 && hour < 12)
+            {
+            System.Console.WriteLine("It's morning");
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+            System.Console.WriteLine("It's evening");
+            }
+            else 
+            {
+                System.Console.WriteLine("It's afternoon");
+            }
 
-//Format
-         var myFullName = string.Format("My name is {0} {1}", firstName, lastName);
-         System.Console.WriteLine(myFullName);
+            bool isCostumer = true;
 
-//Join
-         var names = new string[3] {"John", "Jack", "Mary"};
-         var formattedNames = string.Join(",", names);
-         System.Console.WriteLine(formattedNames);
+            // float price;
+            // if (isCostumer)
+            //     price = 19.95f;
+            // else 
+            //     price = 29.95f;
 
-//Verbatim 
-        var text = "Hi John\nLook into the following\nc:\\folder1\\folder2\nc:\\folder3\\folder4";
-        System.Console.WriteLine(text);
+            float price = (isCostumer) ? 19.95f : 29.95f;
 
-        var text1 = @"Hi John
-        Look into the following
-        c:\folder1\folder2
-        c:\folder3\folder4";
-        System.Console.WriteLine(text1);
-        }
+            System.Console.WriteLine(price);
+
+
+            var season = Season.Autumn; 
+
+            switch (season)
+            {
+                case Season.Autumn:
+                    System.Console.WriteLine("It's Autumn!");
+                break;
+
+                case Season.Summer:
+                    System.Console.WriteLine("It's Summer");
+                break;
+
+                default:
+                    System.Console.WriteLine("I'm not sure");
+                break;
+            }
+
+         }
     }
 }
