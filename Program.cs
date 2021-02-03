@@ -1,6 +1,7 @@
 ﻿using System;
 using HelloWorld.Math;
 using Conditionals;
+using System.Collections.Generic;
 
 namespace HelloWorld
 {
@@ -8,40 +9,21 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-            var numbers = new[] {1, 2, 3, 4, 5};
+            var numbers = new List<int>() {1, 2, 3, 4};
+            numbers.Add(1);
+            numbers.AddRange(new int[3] {5, 6, 7});
 
-            // length 
-            System.Console.WriteLine("Lenght of array: ", + numbers.Length);
+            foreach (var i in numbers)
+            System.Console.WriteLine(i);
 
-            // find position
-            var indx = Array.IndexOf(numbers, 2);
-            System.Console.WriteLine(indx);
+            System.Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
+            System.Console.WriteLine("Last index of 1: " + numbers.LastIndexOf(1));
 
-            // //clear    (array, starting index, lenght to be cleared)
-            Array.Clear(numbers, 0, 2);
+            System.Console.WriteLine("Count: " + numbers.Count);
 
-            System.Console.WriteLine("Effect of C;ear()");
-            foreach(var n in numbers)
-            System.Console.WriteLine(n);
-
-            //copy 
-            int[] another = new int[3];   
-            // (array, destination, number of elements to be copied)
-            Array.Copy(numbers, another, 3);
-
-System.Console.WriteLine("Effect of Copy()");
-            foreach(var n in another)
-            System.Console.WriteLine(n);
-
-            //sort 
-            Array.Sort(numbers);
-            foreach(var n in numbers)
-            System.Console.WriteLine(n);
-
-            //reverse
-            Array.Reverse(numbers);
-            foreach(var n in numbers)
-            System.Console.WriteLine(n);
+            numbers.Remove(1);
+                       foreach (var i in numbers)
+            System.Console.WriteLine(i);
         }
     }
 }
