@@ -9,21 +9,17 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-           var dateTime = new DateTime(2021, 2, 3);
-           var now = DateTime.Now;
-           var today = DateTime.Today;
+           var name = "Kenneth Colon ";
+           System.Console.WriteLine("Trim & Uppercase: " + name.Trim().ToUpper());
 
-           System.Console.WriteLine("dateTime: " + dateTime);
-           System.Console.WriteLine("now: " + now);
+           var nameSplit = name.Split(' ');
+           System.Console.WriteLine("First Name: " + nameSplit[0]);
+           System.Console.WriteLine("Last Name: " + nameSplit[1]);
 
-           System.Console.WriteLine("Hour: " + now.Hour);
-           System.Console.WriteLine("Minute: " + now.Minute);
+           System.Console.WriteLine(name.Replace("Kenneth", "Ken"));
 
-           var tomorrow = now.AddDays(1);
-           var yesterday = now.AddDays(-1);
-
-           System.Console.WriteLine(tomorrow);
-           System.Console.WriteLine(yesterday);
+           if(String.IsNullOrWhiteSpace(" "))
+           System.Console.WriteLine("INVALID");
         }
     }
 }
