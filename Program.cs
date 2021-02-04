@@ -9,21 +9,21 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-            var numbers = new List<int>() {1, 2, 3, 4};
-            numbers.Add(1);
-            numbers.AddRange(new int[3] {5, 6, 7});
+           var dateTime = new DateTime(2021, 2, 3);
+           var now = DateTime.Now;
+           var today = DateTime.Today;
 
-            foreach (var i in numbers)
-            System.Console.WriteLine(i);
+           System.Console.WriteLine("dateTime: " + dateTime);
+           System.Console.WriteLine("now: " + now);
 
-            System.Console.WriteLine("Index of 1: " + numbers.IndexOf(1));
-            System.Console.WriteLine("Last index of 1: " + numbers.LastIndexOf(1));
+           System.Console.WriteLine("Hour: " + now.Hour);
+           System.Console.WriteLine("Minute: " + now.Minute);
 
-            System.Console.WriteLine("Count: " + numbers.Count);
+           var tomorrow = now.AddDays(1);
+           var yesterday = now.AddDays(-1);
 
-            numbers.Remove(1);
-                       foreach (var i in numbers)
-            System.Console.WriteLine(i);
+           System.Console.WriteLine(tomorrow);
+           System.Console.WriteLine(yesterday);
         }
     }
 }
