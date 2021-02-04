@@ -2,6 +2,7 @@
 using HelloWorld.Math;
 using Conditionals;
 using System.Collections.Generic;
+using System.Text;
 
 namespace HelloWorld
 {
@@ -9,17 +10,20 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
-           var name = "Kenneth Colon ";
-           System.Console.WriteLine("Trim & Uppercase: " + name.Trim().ToUpper());
+            var builder = new StringBuilder();
 
-           var nameSplit = name.Split(' ');
-           System.Console.WriteLine("First Name: " + nameSplit[0]);
-           System.Console.WriteLine("Last Name: " + nameSplit[1]);
+            builder
+                .Append('-', 10)
+                .AppendLine()
+                .Append("Header")
+                .AppendLine()
+                .Append('-', 10)
 
-           System.Console.WriteLine(name.Replace("Kenneth", "Ken"));
+                .Replace('-', '~')
+                .Remove(0, 10)
+                .Insert(0,new string('-', 10));
 
-           if(String.IsNullOrWhiteSpace(" "))
-           System.Console.WriteLine("INVALID");
+            System.Console.WriteLine(builder);
         }
     }
 }
