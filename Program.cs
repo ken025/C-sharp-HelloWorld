@@ -10,6 +10,7 @@ namespace HelloWorld
     {
         static void  Main(string[] args)
         {
+
             var builder = new StringBuilder();
 
             builder
@@ -24,6 +25,10 @@ namespace HelloWorld
                 .Insert(0,new string('-', 10));
 
             System.Console.WriteLine(builder);
+
+System.Console.WriteLine("Enter your name: ");
+            var name = Console.ReadLine();
+            System.Console.WriteLine($"Hello, my name is: {name}!");
         }
     }
 }
